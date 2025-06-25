@@ -9,8 +9,8 @@ RUN yum install -y tar gzip shadow-utils && yum clean all
 
 ### Install NVM
 RUN mkdir /usr/local/nvm
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 14.17.3
+ENV NVM_DIR = /usr/local/nvm
+ENV NODE_VERSION = 16.0.0
 
 RUN curl -s -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 RUN source $NVM_DIR/nvm.sh \
@@ -19,11 +19,11 @@ RUN source $NVM_DIR/nvm.sh \
     && nvm use default
 
 # add node and npm to path so the commands are available
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+ENV NODE_PATH = $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH = $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # Add app port
-ENV CLUSTER_SAMPLE_APP_PORT 8080
+ENV CLUSTER_SAMPLE_APP_PORT = 8080
 
 
 
